@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+    <span id="ValidRange"></span><br>
+    <span id="tstamp"></span>
+     
+    <br><br>
+    <button onclick="start()">Connect</button>
+ 
+    <script type="text/javascript">
+    function start() {
+
+        document.getElementById("ValidRange").innerHTML = "Waiting for data...";
+        var deviceID = "341043000647363339344638";
+        var accessToken = "fc0d5e2a5a1a62b537783b58c0726f5fa8841885";
+        var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
+
+        eventSource.addEventListener('open', function(e) {
+            console.log("Opened!"); },false);
+         
+        eventSource.addEventListener('error', function(e) {
+            console.log("Errored!"); },false);
+         
+        eventSource.addEventListener('ValidRange', function(e) {
+            var parsedData = JSON.parse(e.data);
+            var tempSpan = document.getElementById("ValidRange");
+            var tsSpan   = document.getElementById("tstamp");
+            tempSpan.innerHTML = "ValidRange: " + parsedData.data;
+            tempSpan.style.fontSize = "40Px";
+            tsSpan.innerHTML = "At timestamp " + parsedData.published_at;
+            tsSpan.style.fontSize = "40px";
+        }, false);
+    }
+    </script>
+</body>
+</html>

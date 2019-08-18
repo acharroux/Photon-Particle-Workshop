@@ -1,0 +1,6 @@
+{
+    "C_Cpp.default.configurationProvider": "particle.particle-vscode-core",
+    "particle.targetDevice": "Photon-01",
+    "particle.firmwareVersion": "1.0.1",
+    "particle.targetPlatform": "photon"
+}
