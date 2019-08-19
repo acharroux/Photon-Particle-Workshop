@@ -76,7 +76,7 @@ Published Event|`ValidRange`|float:Value of last valid range|
 Published Event|`OTARequested`| N/A| Fired after `ForceOTA` has been received
 Published Event|`Connected`|string:JSON dump of Software Panel
 
-To be complete, there also a couple of events that are processed to get some infos about the Photon. This is a purely internal (and documented) trick used to workaround the lack of simple API to get these infos. Best is probably to avoid to talk about that strange way of doing simple things ...
+To be complete, there are also a couple of events that are processed to get some infos about the Photon. This is a purely internal (and documented) trick used to workaround the lack of simple API to get these infos. Best is probably to avoid to talk about that strange way of doing simple things ...
 
 Cloud Feature | Name | Payload | Comment
 --------------|------|---------|--------
@@ -121,7 +121,7 @@ You should end up with a product screen similar to this one:
 
 ## What does [1-SimpleSR104](./1-SimpleSR104) ?
 This first iteration of the firmware addresses only the sonar part of the hardware. 
-* SR-04 measure distances every 100 ms
+* SR-104 measure distances every 100 ms
 * A valid range is a distance between 15 cm & 25 cm for at least 10 measures
 * A valid range is signaled by the Photon's LED flashing red for 200 ms
 
