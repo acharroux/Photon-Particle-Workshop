@@ -25,8 +25,7 @@ bool WifiPanel::refreshValues(void)
 
         byte lMacAddress[6] = {0};
         WiFi.macAddress(lMacAddress);
-        byte *b = lMacAddress;
-        mMacAddress = String::format("%X:%X:%X:%X:%X:%X", *(b++), *(b++), *(b++), *(b++), *(b++), *(b++));
+        mMacAddress = String::format("%X:%X:%X:%X:%X:%X", lMacAddress[0], lMacAddress[1], lMacAddress[2], lMacAddress[3], lMacAddress[4], lMacAddress[4]);
 
         mIPAddress = WiFi.localIP().toString();
 

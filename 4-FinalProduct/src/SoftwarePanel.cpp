@@ -44,7 +44,7 @@ void SoftwarePanel::display(void)
     newLine();
     getDisplay().printf("In:%04lu Out:%04lu", mSoftwareState.getNbReceivedEvents(), mSoftwareState.getNbSentEvents());
     newLine();
-    getDisplay().printf("Range:%03.2f (%d:%d)", mSoftwareState.getRange(), mSoftwareState.getNbValidRanges(), mSoftwareState.getNbCurrentValids());
+    getDisplay().printf("Range:%03.2f (%lu:%lu)", mSoftwareState.getRange(), mSoftwareState.getNbValidRanges(), mSoftwareState.getNbCurrentValids());
 
     getDisplay().display();
 }
